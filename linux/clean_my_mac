@@ -1,0 +1,6 @@
+#!/bin/sh
+# Clean My Mac Disk Script
+# Author:	Max.Chiu
+
+# Remove log of vSSH 
+rm -rf /Users/max/Library/Containers/com.velestar.vssh.osx/Data/Documents/vSSH

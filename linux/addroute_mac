@@ -1,0 +1,43 @@
+#!/bin/sh
+sudo route -nv delete default
+# Beauty
+#sudo route -nv add -net default 172.16.10.1
+# Beauty4 
+sudo route -nv add -net default 172.25.32.2
+# OpenWrt 
+#sudo route -nv add -net default 172.25.10.52
+
+# Local area network 88
+sudo route -nv delete -net 192.168.88.0/24 192.168.88.254
+sudo route -nv add -net 192.168.88.0/24 192.168.88.254
+sudo route -nv delete -net 192.168.8.0/24 192.168.88.254
+sudo route -nv add -net 192.168.8.0/24 192.168.88.254
+sudo route -nv delete -net 192.168.32.0/24 192.168.88.254
+sudo route -nv add -net 192.168.32.0/24 192.168.88.254
+
+# Local area network 32
+#sudo route -nv delete -net 192.168.88.0/24 192.168.32.1
+#sudo route -nv add -net 192.168.88.0/24 192.168.32.1
+#sudo route -nv delete -net 192.168.8.0/24 192.168.32.1
+#sudo route -nv add -net 192.168.8.0/24 192.168.32.1
+#sudo route -nv delete -net 192.168.32.0/24 192.168.32.1
+#sudo route -nv add -net 192.168.32.0/24 192.168.32.1
+
+# Camshare operating Tokyo 
+sudo route -nv delete -net 52.203.25.17/32 192.168.88.254
+sudo route -nv add 52.203.25.17/32 192.168.88.254
+# Camshare demo Tokyo 
+sudo route -nv delete -net 52.196.96.7/32 192.168.88.254
+sudo route -nv add 52.196.96.7/32 192.168.88.254
+# Camshare demo US 
+sudo route -nv delete -net 52.22.146.182/32 192.168.88.254
+sudo route -nv add 52.22.146.182/32 192.168.88.254
+
+# Qpid IM
+#sudo route -nv delete -net 52.192.196.78/32 192.168.88.254
+#sudo route -nv delete -net 218.213.92.12/32 192.168.88.254
+#sudo route -nv add 218.213.92.12/32 192.168.88.254
+
+# Live (Europe)
+sudo route -nv delete -net 18.194.23.38/32 192.168.88.254
+sudo route -nv add 18.194.23.38/32 192.168.88.254
