@@ -14,12 +14,12 @@ for SWAP in `grep Swap $DIR/smaps 2>/dev/null| awk '{ print $2 }'`
 do
 let SUM=$SUM+$SWAP
 done
-echo "PID=$PID - Swap used: $SUM - ($PROGNAME )"
+echo "PID=$PID - Swap used: $SUM - ($PROGNAME)"
 let OVERALL=$OVERALL+$SUM
 SUM=0
  
 done
-echo "Overall swap used: $OVERALL"
+echo "Overall swap used: ${OVERALL}kB"
 }
  
 getswap
