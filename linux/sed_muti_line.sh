@@ -1,0 +1,1 @@
+LANG=C && find . -type f | xargs -I {} grep -rl '<!DOCTYPE html>' {}  | xargs -I {} sed -i "" -ne '1h;1!H;${g;s/<!DOCTYPE html>.*<!DOCTYPE html>/<!DOCTYPE html>/g;p;}' {}
