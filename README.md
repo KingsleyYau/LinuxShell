@@ -21,6 +21,8 @@ Catalog
 ## FFmpeg处理脚本
 * [输出视频帧信息](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/check_video.sh)</br>
 * [转码/裁剪/重命名](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/transcode_dir_mp4.sh)</br>
+* [添加媒体信息](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/create_metadata.sh)</br>
+* [分割短视频](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/create_short_video.sh)</br>
 * [创建高质量GIF](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/create_gif.sh)</br>
 * [合并TS文件](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/combine_ts.sh)</br>
 * [合并MP4文件](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/combine_mp4.sh)</br>
