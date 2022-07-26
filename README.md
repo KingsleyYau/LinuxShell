@@ -10,10 +10,8 @@ Catalog
       
 # 一些常用的脚本
 ## Linux
-## Build
-### Aria2编译脚本
-* build-aria2-iOS.sh
-* build-openssl-iOS.sh
+## Build开源库编译脚本
+* [Aria2](https://github.com/KingsleyYau/LinuxShell/tree/master/build/aria2)</br>
 
 ## FFmpeg
 
