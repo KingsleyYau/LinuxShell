@@ -16,13 +16,16 @@ Catalog
 iOS
 ```
 * [Breakpad](https://github.com/KingsleyYau/LinuxShell/tree/master/build/breakpad)</br>
+```bash
+Android
+```
 * [Curl](https://github.com/KingsleyYau/LinuxShell/tree/master/build/curl-openssl)</br>
 ```bash
 iOS/Android
 ```
 * [FFmpeg](https://github.com/KingsleyYau/LinuxShell/tree/master/build/ffmpeg)</br>
 ```bash
-iOS/Android
+iOS/Android/Linux/MacOSX
 ```
 * [Dlib](https://github.com/KingsleyYau/LinuxShell/tree/master/build/dlib)</br>
 ```bash
