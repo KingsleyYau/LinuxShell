@@ -2,15 +2,15 @@ Catalog
 =================
 
    * [Script](#一些常用的脚本)
-   		* [Linux环境脚本](#Linux)
-   		* [开源库编译脚本](#Build)
-   		* [FFmpeg处理脚本](#FFmpeg)
-      * [Wireshark抓包过滤脚本](#Wireshark)
+   		* [Linux环境脚本](#Linux环境脚本)
+   		* [开源库编译脚本](#开源库编译脚本)
+   		* [FFmpeg处理脚本](#FFmpeg处理脚本)
+      * [Wireshark抓包过滤脚本](#Wireshark抓包过滤脚本)
       
       
 # 一些常用的脚本
-## Linux
-## Build
+## Linux环境脚本
+## 开源库编译脚本
 * [Aria2](https://github.com/KingsleyYau/LinuxShell/tree/master/build/aria2)</br>
 * [Breakpad](https://github.com/KingsleyYau/LinuxShell/tree/master/build/breakpad)</br>
 * [Curl](https://github.com/KingsleyYau/LinuxShell/tree/master/build/curl-openssl)</br>
@@ -18,6 +18,11 @@ Catalog
 * [Dlib](https://github.com/KingsleyYau/LinuxShell/tree/master/build/dlib)</br>
 * [Tcpdump](https://github.com/KingsleyYau/LinuxShell/tree/master/build/other/build-tcpdump-android.sh)</br>
 
-## FFmpeg
+## FFmpeg处理脚本
+* [输出视频帧信息](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/check_video.sh)</br>
+* [转码/裁剪/重命名](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/transcode_dir_mp4.sh)</br>
+* [创建高质量GIF](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/create_gif.sh)</br>
+* [合并TS文件](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/combine_ts.sh)</br>
+* [合并MP4文件](https://github.com/KingsleyYau/LinuxShell/tree/master/ffmpeg/combine_mp4.sh)</br>
 
-## Wireshark
+## Wireshark抓包过滤脚本
