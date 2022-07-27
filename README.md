@@ -11,6 +11,11 @@ Catalog
 # 一些常用的脚本
 ## Linux环境脚本
 * [IPTables口转发](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/iptables-pf.sh)</br>
+* [检查进程Swap使用情况](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/check_swap.sh)</br>
+* [系统基本情况](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/superbench.sh)</br>
+* [ShadowsocksR服务端配置](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/shadowsocksR.sh)</br>
+* [ShadowsocksR客户端配置](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/ssrclient.sh)</br>
+* [VMWare虚拟机磁盘压缩](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/clean_vm_disk.sh)</br>
 
 ## 开源库编译脚本
 * [Aria2](https://github.com/KingsleyYau/LinuxShell/tree/master/build/aria2)</br>
