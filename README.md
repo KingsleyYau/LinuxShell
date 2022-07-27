@@ -10,7 +10,7 @@ Catalog
       
 # 一些常用的脚本
 ## Linux环境脚本
-* [端IpTable口转发](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/iptables-pf.sh)</br>
+* [IPTables口转发](https://github.com/KingsleyYau/LinuxShell/tree/master/linux/iptables-pf.sh)</br>
 
 ## 开源库编译脚本
 * [Aria2](https://github.com/KingsleyYau/LinuxShell/tree/master/build/aria2)</br>
