@@ -42,11 +42,11 @@ function transcode {
   dir=`dirname "${fpath}"`
   fname=`basename $fpath|awk -F . '{print $1}'`;
   ext=`basename $fpath|awk -F . '{print $NF}'`;
+  ext=`echo $ext | tr [A-Z] [a-z]`
   if [ "$ext" != "" ];then
     if [[ "${VIDEOS[@]}" =~ "$ext" ]];then
       echo "transcode: ${fname}.${ext}"
-      $FFMPEG -i $fpath -map 0 -c:a copy -c:v libx264 -profile:v high -y "${OUTPUT}/${fname}.mp4" && mv "$fpath" $BACKUP/ && mv "${OUTPUT}/${fname}.mp4" "$dir/${fname}.mp4"
-      #$FFMPEG -i $fpath -map 0 -c:a aac -c:v libx264 -profile:v high -y "${OUTPUT}/${fname}.mp4" && mv "${OUTPUT}/${fname}.mp4" "$dir/${fname}.mp4"
+      $FFMPEG -i $fpath -map 0 -c:a copy -c:v libx264 -profile:v high -y "${OUTPUT}/${fname}.mp4" && mv "$fpath" $BACKUP
     fi
   fi
 }
@@ -57,6 +57,7 @@ function transcode_replace {
   dir=`dirname "${fpath}"`
   fname=`basename $fpath|awk -F . '{print $1}'`;
   ext=`basename $fpath|awk -F . '{print $NF}'`;
+  ext=`echo $ext | tr [A-Z] [a-z]`
   if [ "$ext" != "" ];then
     if [[ "${VIDEOS[@]}" =~ "$ext" ]];then
       echo "transcode: ${fname}.${ext}"

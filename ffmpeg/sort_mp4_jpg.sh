@@ -9,41 +9,73 @@ function Usage {
 
 INPUT="input"
 if [ "$1" != "" ];then
-  INPUT=""$1""
+  INPUT="$1"
 elif [ "$1" == "-v" ];then
   Usage
   exit 1
 fi
 
-OUTPUT="output"
-if [ "$2" != "" ];then
-  OUTPUT=""$2""
+if [ ! -d "$INPUT" ];then
+  Usage
+  exit
 fi
 
+OUTPUT=""
+if [ "$2" != "" ];then
+  OUTPUT="$2"
+fi
+
+echo "INPUT:$INPUT"
+echo "OUTPUT:$OUTPUT"
+
 # Sort Photo
-P_DIR="${OUTPUT}/P"
-mkdir -p $P_DIR
-RET=`find $INPUT -regextype posix-extended -iregex ".*\.(jpg|jpeg|bmp|png)"`
+if [ -z "$OUTPUT" ];then
+  P_DIR="${INPUT}"
+else
+  P_DIR="${OUTPUT}/P"
+fi
+mkdir -p "$P_DIR"
+
+RET=`find "$INPUT" -regextype posix-extended -iregex ".*\.(jpg|jpeg|bmp|png)"`
 echo "$RET" | while read LINE
 do
   if [ -n "$LINE" ];then
-    EXT=`basename "$LINE" | awk -F '.' '{print $(NF-1)}'`
+    echo "LINE:$LINE"
+    EXT=`basename "$LINE" | awk -F '.' '{print $NF}'`
     FNAME=`md5sum "$LINE" | awk '{print $1}'`
     FNAME=P_$FNAME.$EXT
-    mv "$LINE" "$P_DIR/$FNAME"
+    if [ "$LINE" != "$P_DIR/$FNAME" ];then
+      cp "$LINE" "$P_DIR/$FNAME"
+    fi
   fi
 done
 
 # Sort Video
-V_DIR="${OUTPUT}/V"
-mkdir -p $V_DIR
-RET=`find $INPUT -regextype posix-extended -iregex '.*\.(mp4|mov|mkv|mpeg|mpg|avi)'`
+if [ -z "$OUTPUT" ];then
+  V_DIR="${INPUT}"
+else
+  V_DIR="${OUTPUT}/V"
+fi
+mkdir -p "$V_DIR"
+
+RET=`find "$INPUT" -regextype posix-extended -iregex '.*\.(mp4|mov|mkv|mpeg|mpg|avi|flv)'`
 echo "$RET" | while read LINE
 do
   if [ -n "$LINE" ];then
-    EXT=`basename "$LINE" | awk -F '.' '{print $(NF-1)}'`
+    echo "LINE:$LINE"
+    EXT=`basename "$LINE" | awk -F '.' '{print $NF}'`
     FNAME=`md5sum "$LINE" | awk '{print $1}'`
     FNAME=V_$FNAME.$EXT
-    mv "$LINE" "$V_DIR/$FNAME"
+    if [ "$LINE" != "$V_DIR/$FNAME" ];then
+      cp "$LINE" "$V_DIR/$FNAME"
+    fi
   fi
 done
+
+if [ ! -z "$OUTPUT" ];then
+  REAL_INPUT=`readlink -f "${INPUT}"`
+  if [ ${#REAL_INPUT} -gt 10 ];then
+    echo "REAL_INPUT:$REAL_INPUT"
+    #rm "${REAL_INPUT}" -rf
+  fi
+fi
