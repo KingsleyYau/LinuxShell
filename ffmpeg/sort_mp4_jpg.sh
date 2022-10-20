@@ -16,6 +16,7 @@ elif [ "$1" == "-v" ];then
 fi
 
 if [ ! -d "$INPUT" ];then
+  echo "$INPUT is not a directory"
   Usage
   exit
 fi
@@ -25,8 +26,8 @@ if [ "$2" != "" ];then
   OUTPUT="$2"
 fi
 
-echo "INPUT:$INPUT"
-echo "OUTPUT:$OUTPUT"
+#echo "INPUT:$INPUT"
+#echo "OUTPUT:$OUTPUT"
 
 # Sort Photo
 if [ -z "$OUTPUT" ];then
@@ -40,12 +41,12 @@ RET=`find "$INPUT" -regextype posix-extended -iregex ".*\.(jpg|jpeg|bmp|png)"`
 echo "$RET" | while read LINE
 do
   if [ -n "$LINE" ];then
-    echo "LINE:$LINE"
+    #echo "LINE:$LINE"
     EXT=`basename "$LINE" | awk -F '.' '{print $NF}'`
     FNAME=`md5sum "$LINE" | awk '{print $1}'`
     FNAME=P_$FNAME.$EXT
     if [ "$LINE" != "$P_DIR/$FNAME" ];then
-      cp "$LINE" "$P_DIR/$FNAME"
+      mv "$LINE" "$P_DIR/$FNAME"
     fi
   fi
 done
@@ -62,12 +63,12 @@ RET=`find "$INPUT" -regextype posix-extended -iregex '.*\.(mp4|mov|mkv|mpeg|mpg|
 echo "$RET" | while read LINE
 do
   if [ -n "$LINE" ];then
-    echo "LINE:$LINE"
+    #echo "LINE:$LINE"
     EXT=`basename "$LINE" | awk -F '.' '{print $NF}'`
     FNAME=`md5sum "$LINE" | awk '{print $1}'`
     FNAME=V_$FNAME.$EXT
     if [ "$LINE" != "$V_DIR/$FNAME" ];then
-      cp "$LINE" "$V_DIR/$FNAME"
+      mv "$LINE" "$V_DIR/$FNAME"
     fi
   fi
 done
@@ -75,7 +76,7 @@ done
 if [ ! -z "$OUTPUT" ];then
   REAL_INPUT=`readlink -f "${INPUT}"`
   if [ ${#REAL_INPUT} -gt 10 ];then
-    echo "REAL_INPUT:$REAL_INPUT"
-    #rm "${REAL_INPUT}" -rf
+    #echo "REAL_INPUT:$REAL_INPUT"
+    rm "${REAL_INPUT}" -rf
   fi
 fi
